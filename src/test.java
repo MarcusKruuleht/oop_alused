@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*
  * Muutujate kasutamise näide
  * autor - Anna Karutina
- * ülesanne 1.3
+ * ülesanne 2.1
  * */
 public class test {
     public static void main(String[] args) {
@@ -11,16 +11,14 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Sisestage astme alus");
+        System.out.println("Palun sisesta pilvede kõrgus: ");
         // salvestame kasutaja sisestatud väärtus
-        int asmeAlus = sisend.nextInt();
-        // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Sisestage astendaja");
-        //salvestame kasutaja sisestatud väärtus
-        int astendaja = sisend.nextInt();
-        // arvutamine
-        int tulemus = (int) Math.pow(asmeAlus, astendaja);
-        // väljastamine
-        System.out.println(tulemus);
+        double pilvedeKorgus = sisend.nextDouble();
+        // kontroll
+        if (pilvedeKorgus > 6.0) {
+            System.out.println("Need on ülemised pilved");
+        } else {
+            System.out.println("Need ei ole ülemised pilved");
+        }
     }
 }
