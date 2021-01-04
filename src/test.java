@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 /*
- * Muutujate kasutamise näide
+ * Tingimuslausete kasutamise kasutamise näide
  * autor - Anna Karutina
- * ülesanne 2.1
+ * ülesanne 2.2
  * */
 public class test {
     public static void main(String[] args) {
@@ -11,14 +11,18 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Palun sisesta pilvede kõrgus: ");
+        System.out.println("Palun sisesta punktide summa: ");
         // salvestame kasutaja sisestatud väärtus
-        double pilvedeKorgus = sisend.nextDouble();
+        double punktid = sisend.nextDouble();
         // kontroll
-        if (pilvedeKorgus > 6.0) {
-            System.out.println("Need on ülemised pilved");
-        } else {
-            System.out.println("Need ei ole ülemised pilved");
+        if (punktid >= 0 && punktid < 66) {
+            System.out.println("Vähem kui kandideerimiseks vajalik");
+        } else if (punktid >= 66 && punktid < 85) {
+            System.out.println("Kandideerimine vastuvtule");
+        } else if (punktid >= 85 && punktid <= 100) {
+            System.out.println("Vastuvõtt tagatud");
+        } else if (punktid < 0 || punktid > 100) {
+            System.out.println("Vigane punktisumma");
         }
     }
 }
