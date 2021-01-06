@@ -2,27 +2,25 @@ import java.util.Scanner;
 
 /*
  * autor - Marcus Kruuleht
- * ülesanne 3.2
+ * ülesanne 3.4b
  * */
 public class test {
     public static void main(String[] args) {
         // defineerime muutujad
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
+        int lumivalgekeseOunad = 14;
         // selgitame kasutajale, mida sisestada
-        System.out.println("Sisestage ringide arv: ");
+        System.out.println("Mitu pöialpoissi tahab õunu?: ");
         // salvestame kasutaja sisestatud väärtus
-        int ringideArv = sisend.nextInt();
-        int porgandid = 0;
-        int ring = 1;
-        // korduv tegevus
-        // kontroll
-        while (ring <= ringideArv) {
-            if (ring % 2 == 0) {
-                porgandid = porgandid + ring;
-            }
-            ring = ring + 1;
+        int poialpoisideOunad = sisend.nextInt();
+        int poialpoiss = 1;
+        while (poialpoiss <= poialpoisideOunad) {
+            int ounad = (int) Math.round((Math.random() + 1) * 1);
+            System.out.println(ounad);
+            lumivalgekeseOunad = lumivalgekeseOunad - ounad;
+            poialpoiss = poialpoiss + 1;
         }
-        System.out.println("Porgandite koguarv on " + porgandid + ".");
+        System.out.println("Lumivalgekesele jäi " + lumivalgekeseOunad);
     }
 }
