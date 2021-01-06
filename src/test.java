@@ -1,28 +1,38 @@
 import java.util.Scanner;
 
 /*
- * Tingimuslausete kasutamise kasutamise näide
- * autor - Anna Karutina
- * ülesanne 2.2
+ * autor - Marcus Kruuleht
+ * ülesanne 1.4b
  * */
 public class test {
     public static void main(String[] args) {
         // defineerime muutujad
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
+
+        String nimi;
         // selgitame kasutajale, mida tuleb sisestada
-        System.out.println("Palun sisesta punktide summa: ");
+        System.out.println("Sisestage oma nimi ");
+        nimi = sisend.nextLine();
+
+        System.out.println("Sisestage lubatud kiirus (km/h) ");
         // salvestame kasutaja sisestatud väärtus
-        double punktid = sisend.nextDouble();
+        int lubatudKiirus = sisend.nextInt();
+
+        System.out.println("Sisestage tegelik kiirus (km/h) ");
+        int tegelikKiirus = sisend.nextInt();
+
         // kontroll
-        if (punktid >= 0 && punktid < 66) {
-            System.out.println("Vähem kui kandideerimiseks vajalik");
-        } else if (punktid >= 66 && punktid < 85) {
-            System.out.println("Kandideerimine vastuvtule");
-        } else if (punktid >= 85 && punktid <= 100) {
-            System.out.println("Vastuvõtt tagatud");
-        } else if (punktid < 0 || punktid > 100) {
-            System.out.println("Vigane punktisumma");
+        if (tegelikKiirus <= lubatudKiirus) {
+            System.out.println(nimi + ", teil ei ole trahvi");
+        } else {
+            int kiirus = tegelikKiirus - lubatudKiirus;
+            int trahv = kiirus * 3;
+
+
+            String lause = nimi + ", kiiruse ületamise eest on teie trahv " + trahv + " eurot";
+
+            System.out.println(lause);
         }
     }
 }
