@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 /*
- * autor - Anna Karutina
- * ülesanne 3.3
+ * autor - Marcus Kruuleht
+ * ülesanne 3.2
  * */
 public class test {
     public static void main(String[] args) {
@@ -10,17 +10,19 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale, mida sisestada
-        System.out.println("Täringute arv: ");
+        System.out.println("Sisestage ringide arv: ");
         // salvestame kasutaja sisestatud väärtus
-        int taringuteArv = sisend.nextInt();
+        int ringideArv = sisend.nextInt();
+        int porgandid = 0;
+        int ring = 1;
         // korduv tegevus
         // kontroll
-        while (true) {
-            int taring = (int) Math.round(Math.random() * 6);
-            System.out.println(taring);
-            if (taring == taringuteArv) {
-                break;
+        while (ring <= ringideArv) {
+            if (ring % 2 == 0) {
+                porgandid = porgandid + ring;
             }
+            ring = ring + 1;
         }
+        System.out.println("Porgandite koguarv on " + porgandid + ".");
     }
 }
