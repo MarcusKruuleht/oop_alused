@@ -2,25 +2,32 @@ import java.util.Scanner;
 
 /*
  * autor - Marcus Kruuleht
- * ülesanne 3.4b
+ * ülesanne 2.3c
  * */
 public class test {
     public static void main(String[] args) {
         // defineerime muutujad
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
-        int lumivalgekeseOunad = 14;
-        // selgitame kasutajale, mida sisestada
-        System.out.println("Mitu pöialpoissi tahab õunu?: ");
-        // salvestame kasutaja sisestatud väärtus
-        int poialpoisideOunad = sisend.nextInt();
-        int poialpoiss = 1;
-        while (poialpoiss <= poialpoisideOunad) {
-            int ounad = (int) Math.round((Math.random() + 1) * 1);
-            System.out.println(ounad);
-            lumivalgekeseOunad = lumivalgekeseOunad - ounad;
-            poialpoiss = poialpoiss + 1;
+        System.out.println("Inimeste arv: ");
+        int inimesed = sisend.nextInt();
+        System.out.println("Kohtade arv: ");
+        int kohad = sisend.nextInt();
+        int buss = inimesed / kohad;
+        int jaak = inimesed % kohad;
+
+        if (inimesed - kohad * buss != 0) {
+            System.out.println("Busse vaja: " + (buss + 1));
+        } else if (buss > 0) {
+            System.out.println("Busse vaja: " + buss);
         }
-        System.out.println("Lumivalgekesele jäi " + lumivalgekeseOunad);
+
+        if (inimesed == 0) {
+            System.out.println("Viimases bussis inimesi: 0");
+        } else if (jaak == 0) {
+            System.out.println("Viimases bussis inimesi: " + kohad);
+        } else {
+            System.out.println("Viimases bussis inimesi: " + jaak);
+        }
     }
 }
