@@ -1,33 +1,36 @@
 import java.util.Scanner;
 
 /*
- * autor - Marcus Kruuleht
- * ülesanne 2.3c
+ * meetod + return - näide
+ * autor - Anna Karutina
+ * ülesanne 6.1
  * */
+
 public class test {
+    // banner meetod
+    static String banner(String reklaamlause) {
+        String reklaamlauseSuurteTahtedega = reklaamlause.toUpperCase();
+        return reklaamlauseSuurteTahtedega;
+    }
+
+    // main meeetod
     public static void main(String[] args) {
         // defineerime muutujad
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
-        System.out.println("Inimeste arv: ");
-        int inimesed = sisend.nextInt();
-        System.out.println("Kohtade arv: ");
-        int kohad = sisend.nextInt();
-        int buss = inimesed / kohad;
-        int jaak = inimesed % kohad;
-
-        if (inimesed - kohad * buss != 0) {
-            System.out.println("Busse vaja: " + (buss + 1));
-        } else if (buss > 0) {
-            System.out.println("Busse vaja: " + buss);
-        }
-
-        if (inimesed == 0) {
-            System.out.println("Viimases bussis inimesi: 0");
-        } else if (jaak == 0) {
-            System.out.println("Viimases bussis inimesi: " + kohad);
-        } else {
-            System.out.println("Viimases bussis inimesi: " + jaak);
+        //selgitame kasutjale, mida tuleb sisestafa
+        System.out.println("Mitu korda kuvada reklaamlauset: ");
+        // salvestame kasutaja sisestatud väärtus
+        int kordamine = sisend.nextInt();
+        // samuti sisendid
+        sisend = new Scanner(System.in);
+        System.out.println("Sisesta reklaamlause: ");
+        String lause = sisend.nextLine();
+        // kordamine
+        int kord = 1;
+        while (kord <= kordamine) {
+            System.out.println(banner(lause));
+            kord++;
         }
     }
 }
