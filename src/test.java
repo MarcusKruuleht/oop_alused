@@ -5,14 +5,16 @@
  * */
 
 
+import java.util.Scanner;
+
 public class test {
     public static void main(String[] args) {
-        int[] numbrid = {1, 2, 3, 4, 5};
-        System.out.println(numbrid.length);
-        System.out.println(0);
-        System.out.println(1);
-        System.out.println(2);
-        System.out.println(3);
-        System.out.println(4);
+        int[] vastuvõetud = {2803, 2626, 2359, 1927, 2236, 2281, 2394, 2484, 2468};
+        Scanner sisend = new Scanner(System.in);
+        System.out.println("Sisesta aasta: ");
+        int aasta = sisend.nextInt();
+        int massiiviindeks = aasta - 2011;
+        System.out.println("Vastuvõetud on " + vastuvõetud[massiiviindeks]);
+
     }
 }
