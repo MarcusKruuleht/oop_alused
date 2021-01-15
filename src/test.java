@@ -1,55 +1,36 @@
 /*
- * autor - Marcus Kruuuleht
- * ülesanne 5.4c
+ * loo HashMap tüüpi objekt main meetodis
+ * võti ja väärtus on String
+ * Salvesta mapi inimeste nimed - võtmena ja hüüdnimed - väärtusena
+ * Kasuta andmete hoidmiseks ainult väikesed tähed
+ *
+ * matti - mage
+ * mikael - mixu
+ * arto - arppa
+ *
+ * Küsi kasutaja nimi ha trüki tema hüüdnimi
  * */
 
-import java.io.File;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Scanner;
 
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-
-        // massiiv faili sisu hoidmiseks
-
-        ArrayList<String> opilased = new ArrayList<>();
-
-        // määrame fail ja kontrollime, kas on võiamlik lugeda andmed
-
-        File fail = new File("C:\\Users\\marcus\\IdeaProjects\\oop_alused\\src\\nimekiri.txt");
-        Scanner sisendFailist = null;
-        try {
-            sisendFailist = new Scanner(fail);
-        } catch (Exception e) {
-            System.out.println("Faili pole - " + e.getMessage());
-        }
-
-        // loeme failist
-
-        while (sisendFailist.hasNextLine()) {
-            String rida = sisendFailist.nextLine();
-            opilased.add(rida); // lisame loetud väärtus nimekirja sisse
-        }
-        sisendFailist.close();
-        // loome tänase kuupäeva
-        LocalDateTime tananeKuupev = LocalDateTime.now();
-        System.out.println("Täane kuupäev ilma vorminguseta " + tananeKuupev);
-        DateTimeFormatter tananeKuupaevVormindus = DateTimeFormatter.ofPattern("dd");
-        String tananeKuupaevVormindatud = tananeKuupev.format(tananeKuupaevVormindus);
-        System.out.println("Tänane vormintatud kuupäev " + tananeKuupaevVormindatud);
-        // otsime vajalik inimene nimekirjast
-        int indeks = Integer.parseInt(tananeKuupaevVormindatud);
-        System.out.println(opilased.get(indeks - 1));
-        // vaatame nimekirja sisu
-
+        HashMap<String, String> grupp = new HashMap<String, String>();
+        grupp.put("matti", "mage");
+        grupp.put("mikael", "mixu");
+        grupp.put("arto", "arppa");
         /*
-        for (int i = 0; i < opilased.size(); i++) {
-            System.out.println(i + " " + opilased.get(i));
+        for (String nimi: grupp.keySet()) {
+            System.out.println(nimi + " - " + grupp.get(nimi));
+        }
+
          */
-
-
+        Scanner sisend = new Scanner(System.in);
+        System.out.println("Sisestage nimi: ");
+        String nimi = sisend.nextLine();
+        nimi = nimi.toLowerCase();
+        System.out.println(nimi + " - " + grupp.get(nimi));
     }
 }
