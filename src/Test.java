@@ -15,12 +15,21 @@
 public class Test {
     public static void main(String[] args) {
         // loo konto tüüpi objekt nimega marcusKonto
-        Konto marcusKontoSEB = new Konto();
-        Konto marcusKontoSWED = new Konto();
+        Konto marcusKontoSEB = new Konto("Marcus", 500.0);
+        Konto marcusKontoSWED = new Konto("Marcus");
         // lisan konkreetsed väärtused
-        marcusKontoSEB.looKonto("Marcus", 0.0);
-        marcusKontoSWED.looKonto("Marcus", 0.0);
+        //marcusKontoSEB.looKonto("Marcus", 0.0);
+        //marcusKontoSWED.looKonto("Marcus", 0.0);
 
+        // väljastame tulemused
+        System.out.println("SEB");
+        System.out.println("Konto omanik = " + marcusKontoSEB.omanik);
+        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
+
+        System.out.println("SWED");
+        System.out.println("Konto omanik = " + marcusKontoSWED.omanik);
+        System.out.println("Konto bilans = " + marcusKontoSWED.bilans);
+        /*
         marcusKontoSEB.lisaRaha(20.0);
         marcusKontoSWED.lisaRaha(-50.0);
         // väljastame tulemused
@@ -39,5 +48,7 @@ public class Test {
         System.out.println("SWED");
         System.out.println("Konto omanik = " + marcusKontoSWED.omanik);
         System.out.println("Konto bilans = " + marcusKontoSWED.bilans);
+
+         */
     }
 }
