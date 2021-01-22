@@ -14,7 +14,9 @@
 
 public class Test {
     public static void main(String[] args) {
-        // loo konto tüüpi objekt nimega marcusKonto
+        Toode banaan = new Toode("Banaan", 1.1, 13);
+
+        /*
         Konto marcusKontoSEB = new Konto("Marcus", 500.0);
         Konto marcusKontoSWED = new Konto("Marcus");
         // lisan konkreetsed väärtused
