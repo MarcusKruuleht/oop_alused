@@ -14,43 +14,17 @@
 
 public class Test {
     public static void main(String[] args) {
-        Toode banaan = new Toode("Banaan", 1.1, 13);
+        KahanevLoendur loendur = new KahanevLoendur(2);
 
-        /*
-        Konto marcusKontoSEB = new Konto("Marcus", 500.0);
-        Konto marcusKontoSWED = new Konto("Marcus");
-        // lisan konkreetsed väärtused
-        //marcusKontoSEB.looKonto("Marcus", 0.0);
-        //marcusKontoSWED.looKonto("Marcus", 0.0);
+        loendur.valjastaVaartus();
 
-        // väljastame tulemused
-        System.out.println("SEB");
-        System.out.println("Konto omanik = " + marcusKontoSEB.omanik);
-        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
+        loendur.kahane();
+        loendur.valjastaVaartus();
 
-        System.out.println("SWED");
-        System.out.println("Konto omanik = " + marcusKontoSWED.omanik);
-        System.out.println("Konto bilans = " + marcusKontoSWED.bilans);
-        /*
-        marcusKontoSEB.lisaRaha(20.0);
-        marcusKontoSWED.lisaRaha(-50.0);
-        // väljastame tulemused
-        System.out.println("SEB");
-        System.out.println("Konto omanik = " + marcusKontoSEB.omanik);
-        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
-        marcusKontoSEB.votaRaha(10.0);
-        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
-        marcusKontoSEB.votaRaha(20.0);
-        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
-        marcusKontoSEB.teeUlekanne(marcusKontoSWED, 10.0);
-        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
-        marcusKontoSEB.teeUlekanne(marcusKontoSWED, 10.0);
-        System.out.println("Konto bilans = " + marcusKontoSEB.bilans);
-        System.out.println();
-        System.out.println("SWED");
-        System.out.println("Konto omanik = " + marcusKontoSWED.omanik);
-        System.out.println("Konto bilans = " + marcusKontoSWED.bilans);
+        loendur.kahane();
+        loendur.valjastaVaartus();
 
-         */
+        loendur.kahane();
+        loendur.valjastaVaartus();
     }
 }
