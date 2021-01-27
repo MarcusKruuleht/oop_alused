@@ -24,8 +24,8 @@ public class Test {
         john.setPikkus(175);
         john.setMass(64);
 
-        System.out.println(matti.getNimi() + ", kehamassiindeks: " + matti.kmi());
-        System.out.println(john.getNimi() + ", kehamassiindeks: " + john.kmi());
+        System.out.printf(matti.getNimi() + ", kehamassiindeks: " + "%5.2f%n", matti.kmi());
+        System.out.printf(john.getNimi() + ", kehamassiindeks: " + "%5.2f%n", john.kmi());
         /*
         Ristkylik r1 = new Ristkylik();
         r1.setLaius(4.6);
